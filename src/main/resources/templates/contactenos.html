@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Contacto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosContactenos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        
+        <nav>
+            <a class="name" href="/"><h2>Concobo tours</h2></a>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/listar">Listar <i class="icon ion-md-arrow-dropdown"></i></a></li>
+                <li><a href="/insertar">Insertar</a></li>
+                <li><a href="/contactenos">Contactenos <i class="icon ion-md-arrow-dropdown"></i></a></li>
+            </ul>
+        </nav>
+        <section class="form-register">
+            <h4>Envianos tus comentarios!</h4>
+            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <textarea class="controls" name="message" rows="10" cols="30">Ingrese su comentario aquí</textarea>
+            <input class="botons" type="submit" value="Enviar mensaje">
+            
+        </section>
+    </body>
+</html>
