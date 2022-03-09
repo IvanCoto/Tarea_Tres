@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosInsertar.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav>
+            <a class="name" href="/"><h2>Concobo tours</h2></a>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/listar">Listar <i class="icon ion-md-arrow-dropdown"></i></a></li>
+                <li><a href="/insertar">Insertar</a></li>
+                <li><a href="/contactenos">Contactenos <i class="icon ion-md-arrow-dropdown"></i></a></li>
+                 
+            </ul>
+        </nav>
+        <section class="form-register">
+            <h4>Registro de Usuarios</h4>
+            <form th:action="@{/insertar}" method="post" th:object="${usuario}" >
+                
+                <input class="controls" type="text" name="Nombre" placeholder="Ingrese su Nombre">
+                <input class="controls" type="text" name="apellidos" placeholder="Ingrese su Apellido">
+                <input class="controls" type="email" name="correo" placeholder="Ingrese su Correo">
+                <input class="controls" type="password" name="contrasena" placeholder="Ingrese su Contraseña">
+                <input class="controls" type="text" name="telefono" placeholder="Ingrese su Telefono">    
+                <input class="botons" type="submit" value="Registrar">
+                <!-- <input class="botons" type="submit" value="Buscar">  -->
+                <!-- <input class="botons" type="submit" value="Modificar">  -->
+            </form>
+            <input class="botons" type="submit" value="Eliminar">
+                
+        </section>
+    </body>
+</html>
