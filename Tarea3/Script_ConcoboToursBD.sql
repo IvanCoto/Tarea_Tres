@@ -5,6 +5,6 @@ CREATE TABLE `concobotours`.`usuario`(`id_usuario` INT NOT NULL auto_increment, 
 CREATE TABLE `concobotours`.`contacto`(`id_contacto` INT NOT NULL auto_increment, `nombre` varchar(50) NOT NULL, `apellidos` varchar(50) NOT NULL,
  `tour` VARCHAR(50) NULL, `telefono` VARCHAR(50) NULL, PRIMARY KEY(`id_contacto`));
  
-CREATE USER 'admin_sistema' @'%' IDENTIFIED BY 'adminconcobo';
-GRANT ALL PRIVILEGES ON concobotours to 'admin_sistema';
+CREATE USER 'admin2' @'%' IDENTIFIED BY 'admin1234';
+GRANT ALL PRIVILEGES ON concobotours to 'admin2';
 flush privileges;
