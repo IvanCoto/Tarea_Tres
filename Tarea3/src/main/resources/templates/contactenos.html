@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Contacto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosContactenos.css" rel="stylesheet" type="text/css"/>
+        <link href="../static/css/estilosContactenos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        
+        <header th:replace="layout/plantilla :: header" />
+        
+        <section class="form-register">
+            <h4>Envianos tus comentarios!</h4>
+            
+            <form th:action="@{/guardarContacto}"
+              method="post"
+              th:object="${contacto}"
+            >
+                <label for="nombre"> Nombre </label>
+                <input class="controls" type="text" name="nombre" />
+                <br />
+
+                <label for="apellidos"> Apellidos </label>
+                <input class="controls" type="text" name="apellidos" />
+                <br />
+
+                <label for="tour"> Nombre del Tour </label>
+                <input class="controls" type="text" name="tour" />
+                <br />
+                
+                <label for="telefono"> Telefono </label>
+                <input class="controls" type="text" name="telefono"/>
+                <br />
+
+                <input class="botons" type="submit" name="guardar" value="Guardar" />
+            </form>
+        </section>
+        
+        <section class="contacto-form">
+            <h2> Para mas información contacténos: </h2>
+            <h3> Telefono: 2222-8000 </h3>
+            <h3> Correo eléctronico: servicioalcliente@concobo.cr </h3>
+        </section>
+    </body>
+</html>

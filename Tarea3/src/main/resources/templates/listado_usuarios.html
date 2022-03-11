@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/usuarios.css" rel="stylesheet" type="text/css" />
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosInsertar.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+        <!--  Templates Layout -->
+        <header th:replace="layout/plantilla :: header" />
+        
+        <div class="table-title">
+            <h3>Lista de Usuarios</h3>
+        </div>
+        <table class="table-fill" >
+            <thead>
+                <tr>
+                    <th class="text-left">Nombre</th>
+                    <th class="text-left">Apellidos</th>
+                    <th class="text-left">Correo</th>
+                    <th class="text-left">Telefono</th>
+                    <th class="text-left">Modificar</th>
+                    <th class="text-left">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover">
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.nombre}" class="text-left">  </td>
+                    <td th:text="${usuario.apellidos}" class="text-left">  </td>
+                    <td th:text="${usuario.correo}" class="text-left">  </td>
+                    <td th:text="${usuario.telefono}" class="text-left">  </td>
+                    <td class="text-left"> <a th:href="@{/modificarUsuario/}+${usuario.idUsuario}"> Modificar </a> </td>
+                    <td class="text-left"> <a th:href="@{/eliminarUsuario/}+${usuario.idUsuario}"> Eliminar </a> </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

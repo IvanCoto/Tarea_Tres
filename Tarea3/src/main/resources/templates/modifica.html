@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosInsertar.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav>
+            <a class="name" href="/"><h2>Concobo tours</h2></a>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/listar">Listar <i class="icon ion-md-arrow-dropdown"></i></a></li>
+                <li><a href="/nuevoUsuario">Insertar</a></li>
+                <li><a href="/contactenos">Contactenos <i class="icon ion-md-arrow-dropdown"></i></a></li>
+                 
+            </ul>
+        </nav>
+        <section class="form-register">
+            <h4>Registro de Usuarios</h4>
+            
+            <form th:action="@{/insertar}"
+              method="post"
+              th:object="${usuario}"
+            >
+                <!-- IDUSUARIO, NOMBRE, APELLIDOS, CORREO, CONTRASENA, TELEFONO -->
+                <input type="hidden" name="idUsuario" th:field="*{idUsuario}" />
+                <br />
+
+                <label for="nombre"> Nombre </label>
+                <input class="controls" type="text" name="nombre" th:field="*{nombre}" />
+                <br />
+
+                <label for="apellidos"> Apellidos </label>
+                <input class="controls" type="text" name="apellidos" th:field="*{apellidos}" />
+                <br />
+
+                <label for="correo"> Correo electronico </label>
+                <input class="controls" type="text" name="correo" th:field="*{correo}"/>
+                <br />
+                
+                <label for="contrasena"> Contraseña </label>
+                <input class="controls" type="text" name="contrasena" th:field="*{contrasena}" />
+                <br />
+                
+                <label for="telefono"> Telefono </label>
+                <input class="controls" type="text" name="telefono" th:field="*{telefono}"/>
+                <br />
+
+                <input class="botons" type="submit" name="guardar" value="Guardar" />
+                    
+            </form>
+                
+        </section>
+    </body>
+</html>

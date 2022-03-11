@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosInsertar.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        
+        <header th:replace="layout/plantilla :: header" />
+        
+        <section class="form-register">
+            <h4>Registro de Usuarios</h4>
+            
+            <form th:action="@{/insertar}"
+              method="post"
+              th:object="${usuarios}"
+            >
+                <!-- IDUSUARIO, NOMBRE, APELLIDOS, CORREO, CONTRASENA, TELEFONO -->
+                <!-- <input type="hidden" name="idUsuario" th:field="*{idUsuario}" />-->
+                <br />
+
+                <label for="nombre"> Nombre </label>
+                <input class="controls" type="text" name="nombre" />
+                <br />
+
+                <label for="apellidos"> Apellidos </label>
+                <input class="controls" type="text" name="apellidos" />
+                <br />
+
+                <label for="correo"> Correo electronico </label>
+                <input class="controls" type="text" name="correo"/>
+                <br />
+                
+                <label for="contrasena"> Contraseña </label>
+                <input class="controls" type="text" name="contrasena" />
+                <br />
+                
+                <label for="telefono"> Telefono </label>
+                <input class="controls" type="text" name="telefono"/>
+                <br />
+
+                <input class="botons" type="submit" name="guardar" value="Guardar" />
+                    
+            </form>
+                
+        </section>
+    </body>
+</html>
